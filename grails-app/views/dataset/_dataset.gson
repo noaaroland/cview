@@ -1,0 +1,8 @@
+import cview.Dataset
+
+model {
+    Dataset dataset
+}
+json g.render(dataset, [excludes: ["datasets"]]) {
+    datasets g.render(dataset.datasets, [excludes: ["datasets", "parent"]])
+}
